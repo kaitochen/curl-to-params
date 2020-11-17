@@ -36,7 +36,12 @@ const toJs = curlCommand => {
   }
 
   jsCode += '{\n    "url": "' + request.url + '"'
-
+  if(request.static) {
+    jsCode += ',\n    "static": "' + request.static + '"'
+  }
+  if(request.dynamic) {
+    jsCode += ',\n    "dynamic": "' + request.dynamic + '"'
+  }
   if (request.method !== 'get' || request.headers || request.cookies || request.auth || request.body) {
     jsCode += ',\n'
 
@@ -87,12 +92,7 @@ const toJs = curlCommand => {
     if(request['export-name']) {
       jsCode += ',\n    "export-name": "' + request['export-name'] + '"'
     }
-    if(request.static) {
-      jsCode += ',\n    "static": "' + request.static + '"'
-    }
-    if(request.dynamic) {
-      jsCode += ',\n    "dynamic": "' + request.dynamic + '"'
-    }
+    
     jsCode += '\n'
   }
 
