@@ -42,6 +42,9 @@ const toJs = (curlCommand) => {
   if (request.dynamic) {
     jsCode += ',\n    "dynamic": "' + request.dynamic + '"';
   }
+  if (request.title) {
+    jsCode += ',\n    "title": "' + request.title + '"';
+  }
   jsCode += ",\n";
   jsCode += '    "method": "' + request.method.toUpperCase() + '"';
 

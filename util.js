@@ -215,6 +215,9 @@ const parseCurlCommand = curlCommand => {
   if(parsedArguments.alert) {
     request.alert = parsedArguments.alert
   }
+  if(parsedArguments.title) {
+    request.title = parsedArguments.title
+  }
   if(parsedArguments.export) {
     request.export = parsedArguments.export
   }
