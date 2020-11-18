@@ -1,6 +1,6 @@
 {
   "name": "curl-to-params",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "converter curl code to request params",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,10 @@
   "keywords": [
     "curl-to-params"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaitochen/curl-to-params.git"
+  },
   "dependencies": {
     "cookie": "^0.4.0",
     "jsesc": "^2.5.2",

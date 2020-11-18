@@ -45,6 +45,9 @@ const toJs = (curlCommand) => {
   if (request.title) {
     jsCode += ',\n    "title": "' + request.title + '"';
   }
+  if (request.dialog) {
+    jsCode += ',\n    "dialog": "' + request.dialog + '"';
+  }
   jsCode += ",\n";
   jsCode += '    "method": "' + request.method.toUpperCase() + '"';
 
