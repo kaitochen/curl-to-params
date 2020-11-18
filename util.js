@@ -101,8 +101,9 @@ const parseCurlCommand = curlCommand => {
     cookies = cookie.parse(cookieString.replace(/^Cookie: /gi, ''), cookieParseOptions)
   }
   let method
-  console.log(parsedArguments.X)
-  if (parsedArguments.X === 'POST') {
+  if (parsedArguments.X === 'GET') {
+    method = 'get'
+  } else if (parsedArguments.X === 'POST') {
     method = 'post'
   } else if (parsedArguments.X === 'PUT' ||
     parsedArguments.T) {
