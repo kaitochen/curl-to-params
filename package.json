@@ -1,6 +1,6 @@
 {
   "name": "curl-to-params",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "converter curl code to request params",
   "main": "index.js",
   "scripts": {
