@@ -26,7 +26,7 @@ const parseCurlCommand = curlCommand => {
   // interpreted as a positional argument.  Someone should add all the flags
   // likely to cause trouble here.
   const parsedArguments = yargs
-    .boolean(['I', 'head', 'compressed', 'L', 'k', 'silent', 's','static','dynamic','dialog'])
+    .boolean(['I', 'head', 'compressed', 'L', 'k', 'silent', 's','static','dynamic','dialog','close','back','refresh'])
     .alias('H', 'header')
     .alias('A', 'user-agent')
     .parse(curlCommand)
@@ -232,6 +232,21 @@ const parseCurlCommand = curlCommand => {
   }
   if(parsedArguments.dynamic){
     request.dynamic = parsedArguments.dynamic
+  }
+  if(parsedArguments.close){
+    request.close = parsedArguments.close
+  }
+  if(parsedArguments.back){
+    request.back = parsedArguments.back
+  }
+  if(parsedArguments.refresh){
+    request.refresh = parsedArguments.refresh
+  }
+  if(parsedArguments.success){
+    request.success = parsedArguments.success
+  }
+  if(parsedArguments.fail){
+    request.fail = parsedArguments.fail
   }
   if (Array.isArray(request.data)) {
     request.dataArray = request.data

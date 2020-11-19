@@ -1,2 +1,2 @@
 const toJs = require('./index');
-console.log(toJs('curl -X POST --dialog "确定要删除改数据吗？" /admin/getStudent'));
+console.log(toJs('curl -X DELETE -d "id=12" --close --refresh --success "删除成功" /admin/deleteStudent'));

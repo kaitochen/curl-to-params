@@ -3,7 +3,6 @@ const jsesc = require("jsesc");
 
 const toJs = (curlCommand) => {
   const request = util.parseCurlCommand(curlCommand);
-  console.log(request);
   let jsCode = "";
 
   if (request.data === true) {
@@ -47,6 +46,21 @@ const toJs = (curlCommand) => {
   }
   if (request.dialog) {
     jsCode += ',\n    "dialog": "' + request.dialog + '"';
+  }
+  if (request.close) {
+    jsCode += ',\n    "close": "' + request.close + '"';
+  }
+  if (request.back) {
+    jsCode += ',\n    "back": "' + request.back + '"';
+  }
+  if (request.refresh) {
+    jsCode += ',\n    "refresh": "' + request.refresh + '"';
+  }
+  if (request.success) {
+    jsCode += ',\n    "success": "' + request.success + '"';
+  }
+  if (request.fail) {
+    jsCode += ',\n    "fail": "' + request.fail + '"';
   }
   jsCode += ",\n";
   jsCode += '    "method": "' + request.method.toUpperCase() + '"';
