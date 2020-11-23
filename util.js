@@ -19,7 +19,6 @@ const parseCurlCommand = (curlCommand) => {
   // Safari adds `-Xnull` if is unable to determine the request type, it can be ignored
   curlCommand = curlCommand.replace(/ -Xnull/, " ");
   curlCommand = curlCommand.trim();
-  console.log(curlCommand);
   // Parse with some understanding of the meanings of flags.  In particular,
   // boolean flags can be trouble if the URL to fetch follows immediately
   // after, since it will be taken as an argument to the flag rather than
@@ -245,6 +244,9 @@ const parseCurlCommand = (curlCommand) => {
   }
   if (parsedArguments.dialog) {
     request.dialog = parsedArguments.dialog;
+  }
+  if (parsedArguments.type) {
+    request.type = parsedArguments.type;
   }
   if (parsedArguments.export) {
     request.export = parsedArguments.export;

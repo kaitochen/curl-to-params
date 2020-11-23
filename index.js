@@ -54,6 +54,11 @@ const toJs = (curlCommand) => {
 
     // jsCode += ',\n    "dialog": "' + request.dialog + '"';
   }
+  if (request.type) {
+    jsCode.type = request.type;
+
+    // jsCode += ',\n    "dialog": "' + request.dialog + '"';
+  }
   if (request.close) {
     jsCode.close = request.close;
 
