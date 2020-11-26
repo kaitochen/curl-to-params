@@ -277,7 +277,7 @@ const parseCurlCommand = (curlCommand) => {
   }
   if (Array.isArray(request.data)) {
     request.dataArray = request.data;
-    request.data = request.data.join("&&");
+    request.data = request.data.join("&");
   }
 
   if (parsedArguments.k || parsedArguments.insecure) {
