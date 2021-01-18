@@ -64,6 +64,11 @@ const toJs = (curlCommand) => {
 
     // jsCode += ',\n    "close": "' + request.close + '"';
   }
+  if (request.open) {
+    jsCode.open = request.open;
+
+    // jsCode += ',\n    "close": "' + request.close + '"';
+  }
   if (request.back) {
     jsCode.back = request.back;
 

@@ -40,6 +40,7 @@ const parseCurlCommand = (curlCommand) => {
       "close",
       "back",
       "refresh",
+      "open"
     ])
     .alias("H", "header")
     .alias("A", "user-agent")
@@ -262,6 +263,9 @@ const parseCurlCommand = (curlCommand) => {
   }
   if (parsedArguments.close) {
     request.close = parsedArguments.close;
+  }
+  if (parsedArguments.open) {
+    request.open = parsedArguments.open;
   }
   if (parsedArguments.back) {
     request.back = parsedArguments.back;
